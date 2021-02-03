@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "View Collection";
+}
+<h2>The Film Collection</h2>
+<br />
+@model IEnumerable<Film>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Rating</th>
+            <th>Edited</th>
+            <th>Lent To</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Film film in Model)
+        {
+        <tr>
+            <td>@film.Category</td>
+            <td>@film.Title</td>
+            <td>@film.Year</td>
+            <td>@film.Director</td>
+            <td>@film.Rating</td>
+            @if (film.Edited)
+            {
+                <td>Yes</td>
+            }
+            else
+            {
+                <td>No</td>
+            }
+            <td>@film.LentTo</td>
+            <td>@film.Notes</td>
+        </tr>
+        }
+    </tbody>
+</table>

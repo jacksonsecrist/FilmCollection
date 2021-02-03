@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Confirmation";
+}
+@model FilmCollection.Models.Film
+<div style="text-align:center;">
+    <h2>Success! @Model.Title has been added to the film collection! Great choice!</h2>
+    <br />
+    <a asp-controller="Home" asp-action="Collection" class="btn btn-primary">View Collection</a>
+</div>
