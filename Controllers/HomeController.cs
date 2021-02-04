@@ -52,7 +52,7 @@ namespace FilmCollection.Controllers
 
         public IActionResult Collection()
         {
-            return View(TempStorage.FilmCollection);
+            return View(TempStorage.FilmCollection.Where(film => film.Title != "Independence Day"));
         }
 
         public IActionResult MyPodcasts()
